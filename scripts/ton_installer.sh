@@ -108,7 +108,7 @@ make build_libs -j$(nproc)
 echo -e "${COLOR}[3/6]${ENDC} Preparing for compilation"
 cd $SOURCES_DIR
 rm -rf $SOURCES_DIR/ton
-git clone --recursive https://github.com/ton-blockchain/ton.git
+git clone --recursive git clone git@github.com:mevton-labs/ton-secured.git --branch mev-accelerator $SOURCES_DIR/ton
 
 echo "checkout to ${ton_node_version}"
 
