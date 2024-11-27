@@ -95,14 +95,14 @@ fi
 pip3 install psutil crc16 requests
 
 # build openssl 3.0
-echo -e "${COLOR}[2/6]${ENDC} Building OpenSSL 3.0"
-rm -rf $BIN_DIR/openssl_3
-git clone https://github.com/openssl/openssl $BIN_DIR/openssl_3
-cd $BIN_DIR/openssl_3
-opensslPath=`pwd`
-git checkout openssl-3.1.4
-./config
-make build_libs -j$(nproc)
+#echo -e "${COLOR}[2/6]${ENDC} Building OpenSSL 3.0"
+#rm -rf $BIN_DIR/openssl_3
+#git clone https://github.com/openssl/openssl $BIN_DIR/openssl_3
+#cd $BIN_DIR/openssl_3
+#opensslPath=`pwd`
+#git checkout openssl-3.1.4
+#./config
+#make build_libs -j$(nproc)
 
 # Клонирование репозиториев с github.com
 echo -e "${COLOR}[3/6]${ENDC} Preparing for compilation"
@@ -145,7 +145,8 @@ if [[ "$OSTYPE" =~ darwin.* ]]; then
 		cmake -DCMAKE_BUILD_TYPE=Release $SOURCES_DIR/ton
 	fi
 else
-	cmake -DCMAKE_BUILD_TYPE=Release $SOURCES_DIR/ton -GNinja -DTON_USE_JEMALLOC=ON -DOPENSSL_FOUND=1 -DOPENSSL_INCLUDE_DIR=$opensslPath/include -DOPENSSL_CRYPTO_LIBRARY=$opensslPath/libcrypto.a
+#	cmake -DCMAKE_BUILD_TYPE=Release $SOURCES_DIR/ton -GNinja -DTON_USE_JEMALLOC=ON -DOPENSSL_FOUND=1 -DOPENSSL_INCLUDE_DIR=$opensslPath/include -DOPENSSL_CRYPTO_LIBRARY=$opensslPath/libcrypto.a
+  cmake -DCMAKE_BUILD_TYPE=Release $SOURCES_DIR/ton -GNinja -DTON_USE_JEMALLOC=ON -DPORTABLE=1 -DTON_ARCH=
 fi
 
 # Расчитываем количество процессоров для сборки
