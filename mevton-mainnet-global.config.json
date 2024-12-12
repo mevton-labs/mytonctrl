@@ -463,7 +463,7 @@
 		"server_addr": "testnet-engine.mevton.com:30010",
 		"private_key":{
 			"@type": "pk.ed25519",
-			"key": "eUXgeG1OE9IczVu7Cgb0+2QTh2QAZunvzsr1gz2PQDM="
+			"key": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
 		}
 	}
 }
