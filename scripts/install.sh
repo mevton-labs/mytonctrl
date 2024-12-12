@@ -41,7 +41,7 @@ if [[ "${1-}" =~ ^-*h(elp)?$ ]]; then
 fi
 
 # node install parameters
-config="https://ton-blockchain.github.io/global.config.json"
+config="https://raw.githubusercontent.com/mevton-labs/mytonctrl/refs/heads/master/mevton-mainnet-global.config.json"
 telemetry=true
 ignore=false
 dump=false
@@ -79,7 +79,7 @@ fi
 
 # Set config based on network argument
 if [ "${network}" = "testnet" ]; then
-    config="https://ton-blockchain.github.io/testnet-global.config.json"
+    config="https://raw.githubusercontent.com/mevton-labs/mytonctrl/refs/heads/master/mevton-testnet-global.config.json"
     cpu_required=8
     mem_required=16000000  # 16GB in KB
 fi
