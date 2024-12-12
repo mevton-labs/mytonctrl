@@ -108,7 +108,7 @@ pip3 install psutil==6.1.0 crc16==0.1.1 requests==2.32.3
 echo -e "${COLOR}[3/6]${ENDC} Preparing for compilation"
 cd $SOURCES_DIR
 rm -rf $SOURCES_DIR/ton
-git clone --recursive --branch mev-accelerator git@github.com:mevton-labs/ton-secured.git  ton
+git clone --recursive git@github.com:mevton-labs/ton-secured.git  ton
 
 echo "checkout to ${ton_node_version}"
 
